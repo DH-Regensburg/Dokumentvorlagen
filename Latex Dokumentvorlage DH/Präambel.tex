@@ -1,0 +1,73 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}
+\addbibresource{literatur.bib} 
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{graphicx}
+\usepackage{newtxtext,newtxmath} % Serifenschrift
+%\usepackage[sfdefault]{FiraSans} % Entkommentieren für serifenlose Schrift
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+
+%Kopzeile/Fußzeile anpassen
+\pagestyle{fancy}
+\fancyhf{} %Löschen der gesetzten Formatierung
+%Kopfzeile anpassen
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\fancyhead[C]{\footnotesize\nouppercase\leftmark}
+%Fußzeile anpassen
+\fancyfoot[C]{\thepage}
+
+% Setzen der Seitenränder
+\geometry{
+  left=3.7cm,
+  right=3.5cm,
+  top=2.5cm,
+  bottom=2.5cm
+}
+
+% Anpassung der Überschriften, um sie fett und in entsprechender Größe zu setzen
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Fußnotengröße anpassen
+\renewcommand{\footnotesize}{\small} % Für 10pt im 12pt Dokument
+
+% Einrückung und Zeilenabstand
+\setlength{\parindent}{0.7cm}
+\onehalfspacing
+
+%langes Zitat
+\usepackage{etoolbox} % Für \newtoggle und \toggletrue/\togglefalse
+\usepackage{setspace} % Für Zeilenabstandsänderungen
+\newtoggle{langeszitat}
+\togglefalse{langeszitat} % Standardmäßig ist das Zitat nicht aktiv
+\newcommand{\langeszitat}[1]{%
+  \toggletrue{langeszitat}% Schaltet um auf Langzitat-Modus
+  \vspace{0.8em}
+  \begin{quote}
+  \vspace{-\topsep} % Entfernt zusätzlichen Abstand oben
+  \leftskip=1cm \rightskip=1cm % Einrückung rechts und links
+  \small % Eine Punktgröße kleiner als der Fließtext
+  \setstretch{1.0} % Einstellung des Zeilenabstands auf 1.0
+  #1
+  \vspace{0.8em}
+  \end{quote}
+  \togglefalse{langeszitat}% Schaltet zurück nach dem Zitat
+}
+
+%Anpassen der Listenelemente, wenn Abstand nicht passend
+\setlist[itemize]{itemsep=0pt, parsep=0pt} % Für ungeordnete Listen
+\setlist[enumerate]{itemsep=0pt, parsep=0pt} % Für geordnete Listen
