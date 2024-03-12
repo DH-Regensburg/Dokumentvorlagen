@@ -1,6 +1,6 @@
 # Dokumentvorlagen
 Hier befinden sich Dokumentvorlagen für Seminar- und Abschlussarbeiten der Professur Digital Humanities
-Die Templates können hier sowohl für Word etc. als auch für Latex heruntergeladen werden.
+Die Templates können hier sowohl für Word etc. als auch für LaTeX heruntergeladen werden.
 
 ## Word
 Word-Vorlagen können Sie wie gewohnt herunterladen. Anschließend können Sie sofort in das Dokument schreiben, eine Kopie erstellen oder die Vorlage als solche speichern.
